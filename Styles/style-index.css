@@ -6,9 +6,130 @@
 }
 
 
-nav ul {
+/* Mise en position du header en position fixed */
+
+body{
+    background-color: #222222;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    transition:
+    background-color 0.4s ease,
+    padding 0.4s ease,
+    top 0.4s ease,
+    transform 0.4s ease,
+    border-radius 0.4s ease;
+  z-index: 1000;
+  position: relative;
+}
+
+.header2{
+    background-color: #272727;
+    border-radius: 28px;
+    top: 15px;
+    position: fixed;
+    left: auto;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+
+
+
+
+
+
+
+.logo {
+    height: 100px;
+    width: auto;
+  }
+  
+.logo svg {
+    height: 100%;
+    width: auto;
+}
+
+.header-droit{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.header-droit ul {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    gap: 40px;
     list-style: none;
     padding: 1em;
-  }
+}
+
+.header-droit ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    
+}
+
+.bouton-cv {
+    background-color: #00b7ff;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.bouton-cv:hover {
+    background-color: #009fd1;
+}
+
+
+.header-droit ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 3px;
+    width: 0%;
+    background-color: #00bfff;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+  
+.header-droit ul li a:hover::after {
+    width: 100%;
+}
+  
+
+.header-droit ul li a.active {
+    color: #00bfff;
+}
+.header-droit ul li a.active::after {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+/* Style du main */
+.accueil{
+    min-height: 300VH;
+}
+
+
+
+
+
+
