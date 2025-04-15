@@ -70,7 +70,7 @@ header{
 }
 
 .header-droit ul li a {
-    color: white;
+    color: #f2f2f2;
     text-decoration: none;
     font-size: 18px;
     position: relative;
@@ -79,7 +79,7 @@ header{
 
 .bouton-cv {
     background-color: #00b7ff;
-    color: white;
+    color: #f2f2f2;
     font-weight: bold;
     padding: 0.5rem 1.5rem;
     border-radius: 12px;
@@ -116,20 +116,64 @@ header{
     width: 100%;
 }
 
-
-
-
-
-
-
-
 /* Style du main */
 .accueil{
-    min-height: 300VH;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    margin: 50px;
 }
 
 
+.prenom{
+    color: #f2f2f2;
+    font-size: 128px; 
+}
+
+h2{
+    color: #00b7ff;
+    font-size: 64px;
+}
+
+.accueil p {
+    color: #f2f2f2;
+    font-size: 24px;
+    text-align: justify ;
+}
 
 
-
+.cta-buttons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+  
+.btn {
+    padding: 15px 40px;
+    font-size: 1.4rem;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+  
+.btn-primary {
+    background-color: #00bfff;
+    color: #222222;
+}
+  
+.btn-primary:hover {
+    background-color: #009acd;
+}
+  
+.btn-outline {
+    border: 2px solid #00bfff;
+    color: #00bfff;
+}
+  
+.btn-outline:hover {
+    background-color: #00bfff;
+    color: #222222;
+}
 
