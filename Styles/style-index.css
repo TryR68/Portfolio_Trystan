@@ -3,14 +3,17 @@
 *{
     font-family: "Poppins", sans-serif;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
-/* Mise en position du header en position fixed */
-
-body{
+/* Style du Header et du bg */
+body {
     background-color: #222222;
-}
+    color: #f2f2f2;
+  }
+
 header{
     display: flex;
     justify-content: space-between;
@@ -30,6 +33,7 @@ header{
     background-color: #272727;
     border-radius: 28px;
     top: 15px;
+    padding: 20px 50px;
     position: fixed;
     left: auto;
     right: auto;
@@ -37,12 +41,6 @@ header{
     transform: translateX(-50%);
 
 }
-
-
-
-
-
-
 
 
 .logo {
@@ -116,34 +114,39 @@ header{
     width: 100%;
 }
 
-/* Style du main */
-.accueil{
-    min-height: 90vh;
-    display: flex;
-    justify-content: center;
-    margin: 50px;
+.header-text{
+    margin-top: 5%;
+    font-size: 30px;
+    padding: 0px 10%;
+
 }
 
-
-.prenom{
+.header-text h1{
     color: #f2f2f2;
-    font-size: 128px; 
+    font-size: 120px; 
+    margin-top: 20px;
 }
+
+
+
 
 h2{
     color: #00b7ff;
     font-size: 64px;
+    margin-bottom: 16px;
 }
 
-.accueil p {
+.header-text p {
     color: #f2f2f2;
     font-size: 24px;
     text-align: justify ;
+    max-width: 80%;
 }
 
 
 .cta-buttons {
     margin-top: 50px;
+    width: fit-content;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -177,3 +180,34 @@ h2{
     color: #222222;
 }
 
+/* A propos */
+
+.a-propos{
+    padding: 80px 0;
+    color: #ababab;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.a-propos-col-1{
+    flex-basis: 35%;
+}
+
+.a-propos-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.a-propos-col-2{
+    flex-basis: 60%;
+}
+
+.title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #f2f2f2;
+}

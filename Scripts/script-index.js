@@ -23,3 +23,5 @@ var typed = new Typed(('.skills'),{
     backDelay: 1000,
     loop : true,
 })
+
+
