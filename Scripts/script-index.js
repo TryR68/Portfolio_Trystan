@@ -1,5 +1,5 @@
 // Créer une constante pour chaque élément qu'on veut sélectionner avec un document.querySelector
-const delay = 500;
+const delay = 600;
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > delay) {
