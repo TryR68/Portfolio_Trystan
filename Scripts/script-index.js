@@ -17,7 +17,7 @@
 
 // Affiche au clavier un par un les skills
 var typed = new Typed(('.skills-taping'),{
-    strings : ['Développeur web', 'Monteur' , 'UI/UX Design'],
+    strings : ['Développement web', 'Montage vidéo' , 'UI/UX Design'],
     typeSpeed : 100 ,
     backSpeed : 100, 
     backDelay: 1000,
@@ -50,3 +50,15 @@ onglets.forEach((onglet, index) => {
 contenus.forEach((contenu, i) => {
     contenu.style.display = i === 0 ? 'block' : 'none';
 });
+
+
+
+
+
+document.querySelector(".burger").addEventListener("click", ouvrir);
+
+document.querySelector(".overlay2").addEventListener("click", ouvrir);
+
+function ouvrir() {
+    document.querySelector("body").classList.toggle("ouvrir")
+}
