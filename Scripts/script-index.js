@@ -36,6 +36,39 @@ contenus.forEach((contenu, i) => {
 
 
 
+// Transmitions des donnés du form vers google shetts
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const form = e.target;
+
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbwP98s2N7hbluFqesVTA2y_aBAl6YVN5Mt9RhQ-gLxmF0T_4yFt_V1Il2C1ghFJnTL2sg/exec", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(res => res.text())
+    .then(response => {
+      alert("Message envoyé !");
+      form.reset();
+    })
+    .catch(error => {
+      alert("Erreur : " + error.message);
+    });
+  });
+
+  
+
+
+
+
 document.querySelector(".burger").addEventListener("click", ouvrir);
 
 document.querySelector(".overlay2").addEventListener("click", ouvrir);
