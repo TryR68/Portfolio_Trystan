@@ -37,32 +37,41 @@ contenus.forEach((contenu, i) => {
 
 
 // Transmitions des donnés du form vers google shetts
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const form = e.target;
+document.addEventListener("DOMContentLoaded", function() {
+  // Assure-toi que le DOM est complètement chargé avant d'ajouter l'événement
+  const form = document.getElementById("contactForm");
 
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value
-    };
+  if (form) {
+      form.addEventListener("submit", function(e) {
+          e.preventDefault();
 
-    fetch("https://script.google.com/macros/s/AKfycbwP98s2N7hbluFqesVTA2y_aBAl6YVN5Mt9RhQ-gLxmF0T_4yFt_V1Il2C1ghFJnTL2sg/exec", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    .then(res => res.text())
-    .then(response => {
-      alert("Message envoyé !");
-      form.reset();
-    })
-    .catch(error => {
-      alert("Erreur : " + error.message);
-    });
-  });
+          const data = {
+              name: form.name.value,
+              email: form.email.value,
+              message: form.message.value
+          };
+
+          fetch("https://script.google.com/macros/s/AKfycby4lcPegbcDJctxTw-x4UcgJWwib5H48usAlDHE2pYZMS_hM7LB7OmWS4T6HXqBRygJfQ/exec", {
+              method: "POST",
+              body: JSON.stringify(data),
+              headers: {
+                  "Content-Type": "application/json"
+              }
+          })
+          .then(res => res.text())
+          .then(response => {
+              alert("Message envoyé et enregistré !");
+              form.reset();
+          })
+          .catch(error => {
+              console.error("Erreur:", error);
+              alert("Erreur : " + error.message);
+          });
+      });
+  } else {
+      console.error('Formulaire avec l\'ID "contactForm" non trouvé.');
+  }
+});
 
   
 
