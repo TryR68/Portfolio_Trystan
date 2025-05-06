@@ -35,49 +35,6 @@ contenus.forEach((contenu, i) => {
 
 
 
-
-// Transmitions des donnés du form vers google shetts
-document.addEventListener("DOMContentLoaded", function() {
-  // Assure-toi que le DOM est complètement chargé avant d'ajouter l'événement
-  const form = document.getElementById("contactForm");
-
-  if (form) {
-      form.addEventListener("submit", function(e) {
-          e.preventDefault();
-
-          const data = {
-              name: form.name.value,
-              email: form.email.value,
-              message: form.message.value
-          };
-
-          fetch("https://script.google.com/macros/s/AKfycby4lcPegbcDJctxTw-x4UcgJWwib5H48usAlDHE2pYZMS_hM7LB7OmWS4T6HXqBRygJfQ/exec", {
-              method: "POST",
-              body: JSON.stringify(data),
-              headers: {
-                  "Content-Type": "application/json"
-              }
-          })
-          .then(res => res.text())
-          .then(response => {
-              alert("Message envoyé et enregistré !");
-              form.reset();
-          })
-          .catch(error => {
-              console.error("Erreur:", error);
-              alert("Erreur : " + error.message);
-          });
-      });
-  } else {
-      console.error('Formulaire avec l\'ID "contactForm" non trouvé.');
-  }
-});
-
-  
-
-
-
-
 document.querySelector(".burger").addEventListener("click", ouvrir);
 
 document.querySelector(".overlay2").addEventListener("click", ouvrir);
